@@ -1,0 +1,10 @@
+# Molecule managed
+
+---
+command:
+  docker images:
+    exit-status: 0
+    stdout:
+    - pihole/pihole
+    stderr: []
+    timeout: 10000

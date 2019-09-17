@@ -1,0 +1,22 @@
+---
+galaxy_info:
+  role_name: pihole
+  author: Dani Segura
+  description: An Ansible Role that runs Pi-hole using Docker on Linux.
+
+  license: license (MIT)
+
+  min_ansible_version: 2.8
+
+  platforms:
+  - name: Ubuntu
+    versions:
+    - all
+  - name: Debian
+    versions:
+    - all
+
+  galaxy_tags:
+    - pihole
+
+dependencies: []

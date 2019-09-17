@@ -1,0 +1,7 @@
+---
+# tasks file for dsegurag.pihole
+- name: Get the Docker image
+  docker_image:
+    name: pihole/pihole
+    source: pull
+    tag: latest

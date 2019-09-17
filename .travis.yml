@@ -1,0 +1,24 @@
+---
+language: python
+python: 3.6
+services: docker
+
+env:
+  global:
+    - ROLE_NAME: pihole
+
+install:
+  - pip install tox
+
+before_script:
+  - cd ../
+  - mv ansible-role-$ROLE_NAME dsegurag.$ROLE_NAME
+  - cd dsegurag.$ROLE_NAME
+
+jobs:
+  include:
+    - script: tox -e ansible28
+      name: Ansible 2.8
+
+notifications:
+  webhooks: https://galaxy.ansible.com/api/v1/notifications/
