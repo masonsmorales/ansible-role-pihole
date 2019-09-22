@@ -8,3 +8,9 @@ command:
     - pihole/pihole
     stderr: []
     timeout: 10000
+  docker ps:
+    exit-status: 0
+    stdout:
+    - pihole/pihole
+    stderr: []
+    timeout: 10000

@@ -5,3 +5,18 @@
     name: pihole/pihole
     source: pull
     tag: latest
+
+- name: Run the Pi-hole container as a DHCP server
+  docker_container:
+    name: pi-hole
+    image: pihole/pihole
+    state: started
+    volumes:
+      - "{{ pihole_files_path }}/etc/pihole/:/etc/pihole/"
+      - "{{ pihole_files_path }}/etc/dnsmasq.d/:/etc/dnsmasq.d/"
+    network_mode: host
+    restart_policy: unless-stopped
+    capabilities:
+      - NET_ADMIN
+    env: "{{ pihole_container_environment }}"
+  when: pihole_dhcp_setup

@@ -1,2 +1,14 @@
 ---
 # defaults file for dsegurag.pihole
+
+pihole_files_path: /opt/pihole
+pihole_dhcp_setup: yes
+
+# https://github.com/pi-hole/docker-pi-hole#environment-variables
+pihole_container_environment:
+  TZ="Europe/Madrid"
+  DNS1="1.1.1.1"
+  DNS2="1.0.0.1"
+  WEBPASSWORD="admin"
+  ServerIP="{{ ansible_host }}"
+  WEB_PORT="8080"
